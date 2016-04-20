@@ -4,6 +4,7 @@
   "description": "The UI for chronicle using react and redux",
   "main": "server.js",
   "scripts": {
+    "dev": "cd build/ && python -m SimpleHTTPServer &  watchify -v -d app/app.jsx -t babelify --extension=jsx -o build/js/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
