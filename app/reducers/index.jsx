@@ -1,4 +1,7 @@
-export default (state = {}, 
+export default (state = {
+  view: '',
+  token: ''
+}, 
 {
   type,
   payload

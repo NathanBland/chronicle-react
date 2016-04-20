@@ -101,7 +101,7 @@ to make them easier to maintain.
 Alright, alright.
 
 Project structure:
-`
+```
 -chronicle-react/
 --build/
 ----js/
@@ -112,7 +112,7 @@ Project structure:
 ----app.jsx
 --package.json
 --.babelrc
-`
+```
 
 Create these files either with terminal, or your editor/ide. 
 
@@ -121,7 +121,9 @@ We will start with this anyway.
 To make our lives easier, if you remember, we included `watchify`. Time to make a script that uses it.
 
 Open up `package.json`, under the `scripts` key, you will add a `dev` script:
-`"dev": "cd build/ && python -m SimpleHTTPServer &  watchify -v -d app/app.jsx -t babelify --extension=jsx -o build/js/app.js",`
+```
+"dev": "cd build/ && python -m SimpleHTTPServer &  watchify -v -d app/app.jsx -t babelify --extension=jsx -o build/js/app.js",
+```
 
 *if you are running python 3 and not python 2, it would be `python -m http.server` instead*
 
@@ -144,12 +146,12 @@ Now if you tried to run this, it would try, but it would give you an error notic
 
 We also need to configure Babel. Let's do that by opening up `.babelrc`
 
-`
+```
 {
   "presets": ["es2015", "react"],
   "plugins": ["transform-object-rest-spread"]
 }
-`
+```
 
 This is telling babel about the plugins and presets we installed earlier. 
 Without this browserify has no idea how to use our code.
@@ -160,10 +162,7 @@ We still need to give it something to actually render. Let's do that, adding to 
 import App from './components'
 import reducer from './reducers'
 
-const store = createStore(
-  reducer,
-  {view: ''}
-)
+const store = createStore(reducer)
 
 ReactDOM.render(
   <App store={store} />,
