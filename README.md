@@ -233,3 +233,4 @@ At this point, if you run `$ npm run dev` your application should come to life o
 port `8080` on your localhost. *If it doesn't, forgive me, I probably missed a step.
 file an issue, and I'll see about getting it fixed*
 
+### The Home Page
